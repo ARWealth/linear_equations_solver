@@ -1,0 +1,3 @@
+import linear_equations
+
+linear_equations.linear_functions()
