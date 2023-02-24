@@ -4,7 +4,8 @@ def point_slope_form(x_1, y_1, m):
 	y_1 = float(y_1)
 	m = float(m)
 	equation = f"y - {y_1} = {m}(x - {x_1})."
-	print(f"The equation of a line that has points ({x_1}, {y_1}) and slope {m} is {equation}")
+	print(f"The equation of a line that has points ({x_1}, {y_1}) and "
+		f"slope {m} is {equation}")
 	return equation
 
 # Function call

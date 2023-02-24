@@ -1,17 +1,29 @@
-"""
-Solve and graph linear functions.
-Write linear equations in slope intercept form
-y = mx + b
-"""
+""" Write linear equations in the form of y = mx + b and graph."""
 
 from slope_and_y_intercept import slope
 from slope_and_y_intercept import y_intercept
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+def style_graph():
+	"""Style and design axes"""
+	fig = plt.figure()
+	ax = fig.add_subplot(1, 1, 1)
+	plt.style.use('grayscale')
+	plt.grid(True)
+	ax.spines['left'].set_position('center')
+	ax.spines['bottom'].set_position('zero')
+	ax.spines['left'].set_color('b')
+	ax.spines['bottom'].set_color('b')
+	ax.spines['right'].set_color('none')
+	ax.spines['top'].set_color('none')
+	ax.xaxis.set_ticks_position('bottom')
+	ax.yaxis.set_ticks_position('left')
+
+
 # Main loop
 while True:
-	# Enter values
 	x_1 = input("Enter X1: ")
 	if x_1 == 'q' or x_1 == 'Q':
 		break
@@ -42,31 +54,13 @@ while True:
 			f"is {root[0]}.")
 
 		# Graphing 
-		# Set up array of 100 linearly spced x values
 		x = np.linspace(-10, 10, 100)
-		# Function to be graphed
 		y = (m_slope*x) + (the_y_intercept)
-
-		fig = plt.figure()
-		ax = fig.add_subplot(1, 1, 1)
-
-		# Add title, labels and grid
-		plt.title(f"Graph of y = {m_slope}x + {the_y_intercept}", fontsize=12, fontweight='bold', color='r')
-		plt.xlabel("x axis", c='b', loc='right')
-		plt.ylabel("y axis", c='b', loc='top')
-		plt.grid(True)
-
-		# Design axes
-		ax.spines['left'].set_position('center')
-		ax.spines['bottom'].set_position('zero')
-		ax.spines['left'].set_color('b')
-		ax.spines['bottom'].set_color('b')
-		ax.spines['right'].set_color('none')
-		ax.spines['top'].set_color('none')
-		ax.xaxis.set_ticks_position('bottom')
-		ax.yaxis.set_ticks_position('left')
-		
-		# Plot and show the function
+		style_graph()
+		plt.title(f"Graph of y = {m_slope}x + {the_y_intercept}", fontsize=12, 
+				fontweight='bold', color='r')
+		plt.xlabel('x', c='b', loc='right')
+		plt.ylabel('y', c='b', loc='top')
 		plt.plot(x, y, 'r')
 		plt.show()
 	

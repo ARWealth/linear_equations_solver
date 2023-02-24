@@ -4,7 +4,6 @@ def slope(x_1, y_1, x_2, y_2):
 	y_1 = float(y_1)
 	x_2 = float(x_2)
 	y_2 = float(y_2)
-
 	m = (y_2 - y_1) / (x_2 - x_1)
 	return m
 
